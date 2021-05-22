@@ -1,9 +1,17 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import './App.css';
+import { getCryptoPrices } from './features/price/priceSlice';
 
 function App() {
-  console.log('process.env.REACT_APP_API_KEY', process.env.REACT_APP_API_KEY);
-  return <div>Main app</div>;
+  const dispatch = useDispatch();
+  return (
+    <div>
+      <button type="button" onClick={() => dispatch(getCryptoPrices())}>
+        Fetch data
+      </button>
+    </div>
+  );
 }
 
 export default App;
