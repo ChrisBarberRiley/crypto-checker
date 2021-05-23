@@ -20,7 +20,7 @@ function App() {
               <p>Data retrieved</p>
               <p>Target: {data.target}</p>
               {Object.entries(data.rates).map((rate) => (
-                <p>
+                <p key={rate[0]}>
                   <strong>{rate[0]}</strong>: {rate[1]}
                 </p>
               ))}
